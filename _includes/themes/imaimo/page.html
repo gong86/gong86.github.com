@@ -1,0 +1,41 @@
+<div class="main">
+    <div class="main_inner">
+        {{ content }}
+    </div>
+    <div class="ribbon_brown"></div>
+</div>
+<div class="sidebar">
+  <div class="sidebar_unit">
+      <div class="unit_container">
+          <div class="aside_title"><i class="icon_sprite icon_home"></i><em>简介</em><span>Introduction</span></div>
+            <p class="intro_note">Hui's Blog include ACG and APP dev informations.<br/><br/>ACG is (Anime, Comic, Game), APP is Application and dev is deveolopment.<br/><br/>If you like my blog，please recommand to others!</p>
+        </div>
+    </div>
+    <div class="sidebar_unit">
+      <div class="unit_container">
+          <div class="aside_title"><i class="icon_sprite icon_categories"></i><em>文章分类</em><span>Categories</span></div>
+            <ul class="category_list clearfix">
+                {% for category in site.categories  %}
+                <li class="category_item"><a class="category_link" href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category | first }}-ref" title="">{{ category | first }}</a><span class="post_count">({{ category | last | size }})</span></li>
+                {% endfor  %}
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar_unit sidebar_unit_last">
+      <div class="unit_container">
+            <div class="aside_title"><i class="icon_sprite icon_information"></i><em>信息</em><span>Information</span></div>
+            <div class="info_note">
+                <p class="info_note_line">My Avadar: </p>
+                <div class="avatar_container">
+                  <img class="author_avatar" width="80" height="80" src="{{ PURE_ASSET_PATH }}/used-images/author_about/edwardup_avatar.jpg" alt="Horo" />
+                </div>
+                <p class="info_note_line">Weibo: <a class="weibo_link" href="http://weibo.com/522565127" target="_blank" title="">@宫辉</a></p>
+                <p class="info_note_line">pixiv: <a class="other_info_link" href="http://pixiv.me/gonghui" target="_blank" title="">gonghui</a></p>
+                <p class="info_note_line">RSS: <a class="RSS_link" href="http://feed.feedsky.com/{{ site.author.feedsky }}" title="RSS" target="_blank"><i class="icon_sprite icon_RSS"></i></a></p>
+                <p class="info_note_line">Links: <a class="friend_site_link" href="http://gongblog.sf.net" title="Hui 个人站 Website of Hui" target="_blank">IOR</a></p>
+                <p class="info_note_line">Project：</p>
+                <div class="project_line"><a href="http://gongblog.sf.net/about" title="Animation and game list" target="_blank"><img class="project_cover_img" width="100%" src="{{ PURE_ASSET_PATH }}/used-images/projects/bangumi-to-watch/bangumi_to_watch_cover.png" alt="Project Cover" /></a></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+---
+layout: page
+title: "Demo pages"
+navflag: "demo pages"
+---
+{% include JB/setup %}
+
+<h1 class="special_title title_demo_pages">Demo pages</h1>
+<section class="demos">
+    <ul class="demo_list">
+        {% for page in site.pages %}
+        {% if page.pageFlag == "demo" %}
+        <li class="demo_item">
+            <div class="demo_cover_container"><a class="demo_cover_link" href="{{ page.url }}" title=""><img class="demo_cover" width="192" height="120" src="{{ DEMO_PATH }}/{{ page.demoName }}/{{ page.demoCover }}"></a></div>
+            <div class="demo_content">
+                <h2 class="demo_title"><a class="demo_title_link" href="{{ page.url }}" title="">{{ page.title }}</a></h2>
+                <p class="demo_intro">{{ page.description }}</p>
+                <div class="read_demo"><a class="read_demo_link" href="{{ page.url }}" title="">查看 &raquo;</a></div>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</section>
